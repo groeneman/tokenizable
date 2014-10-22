@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Michael Groeneman"]
   spec.email         = ["michael@scripted.com"]
   spec.description   = %q{A little gem for creating nice tokens for Mongoid documents}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.summary       = %q{A better summary goes here}
+  spec.homepage      = "http://"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
