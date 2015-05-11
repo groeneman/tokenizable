@@ -78,6 +78,11 @@ describe Tokenizable::Base do
     expect(@d.save).to be true
   end
 
+  it 'instantiating with a token works properly' do
+    d = Dummy.create(token: '12354')
+    expect(d.token).to eq('12354')
+  end
+
   it "save method protects against duplicates if the before_hook doesn't work" do
     @d.save
     without_callback do
