@@ -88,10 +88,8 @@ module Tokenizable
         done = false
         while !done
           begin
-            self.class.mongo_session.with(safe:true) do
-              result = super args
-            end
-          rescue Moped::Errors::OperationFailure => e
+            result = super args
+          rescue Mongo::Error::OperationFailure => e
             if e.message.include?("E11000") && e.message.include?("token")
               write_attribute(:token,nil) # Use write attribute to avoid the immutability imposed by token= (MWG 09/13)
               create_token
